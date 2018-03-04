@@ -111,7 +111,7 @@ func (t *Tail) Start(acc telegraf.Accumulator) error {
 					MustExist: true,
 					Poll:      poll,
 					Pipe:      t.Pipe,
-					Logger:    tail.DiscardingLogger,
+					Logger:    tail.DefaultLogger,
 				})
 			if err != nil {
 				acc.AddError(err)
